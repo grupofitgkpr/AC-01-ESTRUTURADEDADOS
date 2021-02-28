@@ -4,23 +4,23 @@ import java.util.Scanner;
 
 public class Jogo {
 	
-	public static Scanner entrada = new Scanner(System.in); // Vari·vel de entrada de dados
+	public static Scanner entrada = new Scanner(System.in); // Vari√°vel de entrada de dados
 	
 	public static char[ ][ ] initialize() { // Inicializa a primeira Matriz.
 		
-		char[][] m = {{'_', '_', '_'},
-					  {'_', '_', '_'},
-					  {'_', '_', '_'}};
+		char[][] m = 	{{'_', '_', '_'},
+				 {'_', '_', '_'},
+				 {'_', '_', '_'}};
 		return m;
 	}
 	
-	public static boolean step(char M[ ][ ], int lin, int col, char gamer){ // Coloca "X" ou "O" na posiÁ„o escolhida pelo jogador.
+	public static boolean step(char M[ ][ ], int lin, int col, char gamer){ // Coloca "X" ou "O" na posi√ß√£o escolhida pelo jogador.
 		
 		if (M[lin][col] != 'X' && M[lin][col] != 'O') {
 			M[lin][col] = gamer;
 			return true;
 		}
-		System.out.println("PosiÁ„o j· ocupada, escolha novamente!");
+		System.out.println("Posi√ß√£o j√° ocupada, escolha novamente!");
 		return false;
 	}
 	
@@ -41,7 +41,7 @@ public class Jogo {
 		T[6] = "" + M[0][0] + M[1][1] + M[2][2];
 		T[7] = "" + M[0][2] + M[1][1] + M[2][0];
 		
-		int vencedor = -1; // Valor padr„o que indica que o jogo deve continuar.
+		int vencedor = -1; // Valor padr√£o que indica que o jogo deve continuar.
 		
 		// Verifica se O ou X venceram.
 		for (int i=0; i < T.length; i++)
@@ -66,32 +66,32 @@ public class Jogo {
 		}
 	}
 	
-	public static void instruct() { // Exibe as instruÁıes do jogo.
+	public static void instruct() { // Exibe as instru√ß√µes do jogo.
 		
 		System.out.println("\n----------------------------------------------------------------");
-		System.out.println("Para escolher a posiÁ„o. Utilize os n˙meros do teclado numÈrico:");
+		System.out.println("Para escolher a posi√ß√£o. Utilize os n√∫meros do teclado num√©rico:");
 		System.out.println("  |  7  |  8  |  9  |\n"
-						 + "  |  4  |  5  |  6  |\n"
-						 + "  |  1  |  2  |  3  |");
+				 + "  |  4  |  5  |  6  |\n"
+				 + "  |  1  |  2  |  3  |");
 		
-		System.out.println("O cÌrculo sempre comeÁa!\n\n");
+		System.out.println("O c√≠rculo sempre come√ßa!\n\n");
 	}
 
 	public static void group() { // Exibe os integrantes do grupo.
 		
 		System.out.println("\n--------------------------------");
 		System.out.println("Integrantes:\n"
-						+ "- Giovanni Assis Lopes\n"
-						+ "- Kaique Mantoanelli Silva\n"
-						+ "- Pedro Henrique Oliveira Dantas Lopes\n"
-						+ "- Rafael Serino Kiss\n\n");
+				 + "- Giovanni Assis Lopes\n"
+				 + "- Kaique Mantoanelli Silva\n"
+				 + "- Pedro Henrique Oliveira Dantas Lopes\n"
+				 + "- Rafael Serino Kiss\n\n");
 	}
 	
-	public static void game(){ // FunÁ„o que inicializa o jogo.
+	public static void game(){ // Fun√ß√£o que inicializa o jogo.
 		
 		char tabuleiro[][] = initialize();
 		int jogadas = 0;
-		int alternar_jogador = 1; // Variavel que determina qual jogador est· jogando
+		int alternar_jogador = 1; // Variavel que determina qual jogador est√° jogando
 		
 		// Exibe o tabuleiro vazio
 		System.out.println("----- Jogo da Velha -----");
@@ -103,19 +103,19 @@ public class Jogo {
 			boolean valido = false;
 			char jogador;
 			
-			/* Math.signum retorna 1 para n˙mero positivo e -1 para n˙mero negativo
-			Com isso podemos alternar os jogadores multiplicando a vari·vel por -1 */ 
+			/* Math.signum retorna 1 para n√∫mero positivo e -1 para n√∫mero negativo
+			Com isso podemos alternar os jogadores multiplicando a vari√°vel por -1 */ 
 			if (Math.signum(alternar_jogador) == 1)
 				jogador = 'O';
 			else
 				jogador = 'X';
 			
-			// Estrutura que valida se a jogada È possÌvel e n„o permite valores fora do intervalo 1 <= x <= 9.
+			// Estrutura que valida se a jogada √© poss√≠vel e n√£o permite valores fora do intervalo 1 <= x <= 9.
 			while (!valido) {
 				if (jogador == 'O')
-					System.out.printf("Jogador O, informe a posiÁ„o: ");
+					System.out.printf("Jogador O, informe a posi√ß√£o: ");
 				else
-					System.out.printf("Jogador X, informe a posiÁ„o: ");
+					System.out.printf("Jogador X, informe a posi√ß√£o: ");
 				
 				int posicao = entrada.nextInt();
 				switch (posicao) {
@@ -159,17 +159,17 @@ public class Jogo {
 				if (posicao <= 9 && posicao >= 1)
 					valido = step(tabuleiro, i, j, jogador);
 				else
-					System.out.println("PosiÁ„o inv·lida, tente novamente!");
+					System.out.println("Posi√ß√£o inv√°lida, tente novamente!");
 			}
 			
-			// Exibe o tabuleiro atual apÛs cada jogada
+			// Exibe o tabuleiro atual ap√≥s cada jogada
 			System.out.println("");
 			show(tabuleiro);
 			
 			jogadas++; // Incrementa o contador de jogadas
 			alternar_jogador *= -1; // Inverte o valor para alternar o jogador 
 			
-			// … impossivel vencer com menos de 5 jogadas, logo verificamos o status do jogo apenas na rodada 5 para cima
+			// √â impossivel vencer com menos de 5 jogadas, logo verificamos o status do jogo apenas na rodada 5 para cima
 			if (jogadas >= 5) {
 				int resultado = status(tabuleiro, jogadas);
 				
