@@ -8,9 +8,9 @@ public class Jogo {
 	
 	public static char[ ][ ] initialize() { // Inicializa a primeira Matriz.
 		
-		char[][] m = 	{{'_', '_', '_'},
-				 {'_', '_', '_'},
-				 {'_', '_', '_'}};
+		char[][] m = {{'_', '_', '_'},
+					  {'_', '_', '_'},
+					  {'_', '_', '_'}};
 		return m;
 	}
 	
@@ -71,8 +71,8 @@ public class Jogo {
 		System.out.println("\n----------------------------------------------------------------");
 		System.out.println("Para escolher a posição. Utilize os números do teclado numérico:");
 		System.out.println("  |  7  |  8  |  9  |\n"
-				 + "  |  4  |  5  |  6  |\n"
-				 + "  |  1  |  2  |  3  |");
+						 + "  |  4  |  5  |  6  |\n"
+						 + "  |  1  |  2  |  3  |");
 		
 		System.out.println("O círculo sempre começa!\n\n");
 	}
@@ -81,10 +81,10 @@ public class Jogo {
 		
 		System.out.println("\n--------------------------------");
 		System.out.println("Integrantes:\n"
-				 + "- Giovanni Assis Lopes\n"
-				 + "- Kaique Mantoanelli Silva\n"
-				 + "- Pedro Henrique Oliveira Dantas Lopes\n"
-				 + "- Rafael Serino Kiss\n\n");
+						+ "- Giovanni Assis Lopes\n"
+						+ "- Kaique Mantoanelli Silva\n"
+						+ "- Pedro Henrique Oliveira Dantas Lopes\n"
+						+ "- Rafael Serino Kiss\n\n");
 	}
 	
 	public static void game(){ // Função que inicializa o jogo.
